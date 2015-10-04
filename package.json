@@ -1,0 +1,23 @@
+{
+  "name": "Plastiq-Chris-Staton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.0.5",
+    "mongoose": "^4.1.9",
+    "morgan": "^1.6.1",
+    "q": "^1.4.1"
+  }
+}

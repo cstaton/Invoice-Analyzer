@@ -1,0 +1,277 @@
+@font-face { font-family: MuseoSlab; font-weight: 300; src: url('../assets/fonts/museoslab-300-webfont.TTF'); }
+@font-face { font-family: MuseoSlab; font-weight: 700; src: url('../assets/fonts/museoslab-700-webfont.TTF'); }
+
+.container {
+	width: 1200px;
+	margin: 0px auto;
+	margin-top: 60px;
+}
+
+.pac-container:after {
+    background-image: none;
+    background-image: url(../assets/miniArrow.png);
+    background-size: 21px 14px;
+    background-position: 318px 10px;
+    background-color: #f6f6f6;
+    height: 30px;
+    text-align: left;
+    padding-left: 20px;
+    content: "No Match? That\'s ok. Enter any name and click the \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 button.";
+    font-family: Arial;
+	color: #999999;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 36px;
+}
+
+.pac-container {
+	border-radius: 3px;
+	background-color: #ffffff;
+	box-shadow: 0px 1px 3px 0.00px rgba(0, 0, 0, 0.45);
+	width: 425px !important;
+}
+
+.wrap {
+	width: 65px;
+	height: 45px;
+	background-color: #00a1e1;
+	float: right;
+}
+
+.pac-icon {
+	display: none;
+}
+
+.pac-item {
+	height: 79px;
+	padding-left: 30px;
+	font-weight: 400;
+	line-height: 36px;
+
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.pac-item-query {
+	width: 425px;
+	display: block;
+	font-family: Arial;
+	color: #000000;
+	font-size: 15px;
+
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 0px
+}
+
+.pac-item>span:last-child {
+	position: relative;
+	top: -15px;
+	font-size: 12px;
+}
+
+.pac-item:hover .pac-item-query {
+	color:  #00a1e1;
+}
+
+.pac-matched {
+	font-weight: 700;
+}
+
+.payeeSearch {
+	min-width: 600px;
+	/*max-width: 1200px;*/
+	width: 100%;
+}
+
+input[type=text] {
+	width: 901px;
+	height: 41px;
+	padding: 0px;
+	margin: 0px;
+	padding-left: 20px;
+	font-family: Arial;
+	color: #000000;
+	font-size: 18px;
+	font-weight: 400px;
+	line-height: 36px;
+}
+
+#customSubmit {
+	background:url("../assets/Submit_Arrow.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 45px;
+	width: 65px;
+	float: right;
+	padding-left: 0px;
+	margin-left: 0px;
+	border: 0px;
+}
+
+img {
+	float: left;
+	height: 90px;
+	display: inline;
+}
+
+button {
+	background-color: #eeeeee;
+	border-radius: 3px;
+	width: 105px;
+	height: 45px;
+	border: 0px;
+	outline: none;
+	color: #aaaaaa;
+	line-height: 36px;
+	font-weight: 400px;
+	font-size: 18px;
+	display: block;
+	float:left;
+	font-family: Arial;
+	-moz-transition: .5s linear;
+	-ms-transition: .5s linear;
+	-o-transition: .5s linear;
+	-webkit-transition: .5s linear;
+	transition: .5s linear;
+}
+
+button:hover {
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+	background-color: #00a1e1;
+	color: #ffffff;
+/*	padding: 0px;
+	margin: 0px;*/
+}
+
+form {
+	display: inline;
+}
+
+
+.payButton {
+	border-left: 1px solid #eeeeee;	
+	float: right;
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+	background-color: #00a1e1;
+	background:url("../assets/SLine.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 94px;
+	height: 90px;
+}
+
+
+.ACTIVE {
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+	background-color: #00a1e1;
+	color: #ffffff;
+}
+
+::-webkit-input-placeholder {
+   	font-family: Arial;
+	color: #cccccc;
+	font-size: 18px;
+	font-weight: 400px;
+	line-height: 36px;
+}
+
+ul {
+	list-style: none outside none;
+	padding-left: 100px;
+	margin: 0px;
+	margin-top: 82px;
+}
+li {
+	padding: 0px;
+	margin-top: 15px;
+}
+
+.payeeWrap, li{
+	width: 1000px;
+	height: 90px;
+	border-radius: 3px;
+	background-color: #ffffff;
+	box-shadow: 0px 1px 0px 0.00px rgba(0, 0, 0, 0.05);
+}
+
+body {
+	background-color: #fbfbfb;
+}
+p {
+	line-height: 22px;
+	color: #282b2d;
+	font-size: 20px;
+	margin-left: 27px;
+}
+
+.payeeInfo {
+	width: 815px;
+	display: inline-block;
+}
+
+.payeeName {
+	font-family: MuseoSlab;
+	margin-bottom: 0px;
+	font-weight: 700;
+	line-height: 22px;
+	color: #282b2d;
+}
+
+.payeeAddress {
+	margin-top: 8px;
+	font-size: 15px;
+	font-family: MuseoSlab;
+	font-weight: 300;
+	color: #666666;
+}
+
+.tooltip{
+    display: inline;
+    position: relative;
+    text-align: center;
+    line-height: 39px;
+    vertical-align: middle;
+}
+
+.tooltip:hover:after{
+    background: rgba(0,0,0,.75);
+    border-radius: 5px;
+    bottom: 13px;
+    left: -13px;
+    content: attr(title);
+    position: absolute;
+    z-index: 98;
+    width: 120px;
+    height: 39px;
+    font-family: Arial;
+    color: #eeeeee;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.tooltip:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 7px;
+    content: "";
+    left: 39px;
+    position: absolute;
+    z-index: 99;
+}
+
+
+.whycss {
+	display: inline;
+	position: relative;
+	float: right;
+	width: 94px;
+	height: 90px;
+}
+

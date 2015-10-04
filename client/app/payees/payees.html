@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="payeeSearch">
+		<button ng-attr-class= "{{ biz && 'ACTIVE'}}" ng-click="findBiz()">Business</button>
+		<button ng-attr-class= "{{ person && 'ACTIVE'}}" ng-click="findPerson()">Person</button>
+		<form>
+			<input ng-show="biz"type="text" ng-model="chosenPlace" g-place placeholder="{{ pholder }}" ng-focus="handleFocus()"/>
+			<input ng-show="person" type="text" ng-model="chosenPlace" ng-enter placeholder="{{ pholder }}" ng-focus="handleFocus()" />
+			<div class="wrap" ng-click="fireMySubmit('click')">
+				<button id="customSubmit" type="button" ></button>
+			</div>
+		</form>
+	</div>
+	<div class="payeeList">
+		<ul>
+			<li c-payee ng-repeat="item in payees" content="item"></li>
+		</ul>
+	</div>
+</div>
