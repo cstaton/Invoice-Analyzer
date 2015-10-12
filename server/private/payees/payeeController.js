@@ -1,8 +1,10 @@
-var Payee = require("./protectModel");
+var Payee = require("./payeeModel");
 var Q = require("q");
 
 module.exports = {
+
 	savePayee: function(req, res, next) {
+		console.log("POST PAYEE ROUTE");
 		var name = req.body.name;
 		var address = req.body.address;
 		var payeeType = req.body.payeeType;
@@ -20,17 +22,18 @@ module.exports = {
 		};
 
 		createPayee(payee)
-			.then(function(createdPayee) {
+			.then(function (createdPayee) {
 				if (createdPayee) {
 					res.json(createdPayee);
 				} else {
 					return next(new Error("Not a valid Payee"));
 				}
 			})
-			.fail(function(error) {
+			.fail(function (error) {
 				next(error);
 			});
 	},
+
 	getPayees: function(req, res, next) {
 		var findAll = Q.nbind(Payee.find, Payee);
 

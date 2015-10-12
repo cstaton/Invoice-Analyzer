@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 
 var app = express();
 
-mongoose.connect(process.env.MONGOLAB_URI, function(error) {
+mongoose.connect("mongodb://localhost/plastiq", function(error) {
 	if (error) {
 		console.error(error);
 	} else {

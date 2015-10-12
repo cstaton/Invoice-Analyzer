@@ -1,0 +1,111 @@
+  
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+$susy: (
+  debug: (image:show),
+  gutters: .0,
+  container: 1200px,
+  gutter-override: no-gutters,
+  columns: 12,
+  global-box-sizing: border-box,
+  use-custom: (rem: true)
+  );
+
+.container {
+  @include container;
+  @include clearfix;
+  height: 100vh;
+}
+
+
+
+.grid1 {
+  @include span(1 of 12);
+}
+
+.grid2 {
+  @include span(2 of 12);
+}
+.grid3 {
+  @include span(3 of 12); 
+}
+.grid4 {
+  @include span(4 of 12); 
+}
+.grid10 {
+  @include span(10 of 12);
+}
+.grid12 {
+  @include span(12 of 12);
+}
+
+
+.grid9of10 {
+  @include span(9 of 10);
+}
+.grid1of10 {
+  @include span(1 of 10);
+}
+.grid2of10 {
+  @include span(2 of 10);
+}
+.grid6of10 {
+  @include span(6 of 10);
+}
+
+
+.grid1of1 {
+  @include span(1 of 1);
+}
+
+.payeeInfo {
+  margin-top: 100px;
+}
+
+.payeeSearch {
+  margin-top: 100px;
+}
+
+.payeeList {
+  height: 90px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 0px 0.00px rgba(0, 0, 0, 0.05);
+  margin-left: span(1 of 12);
+  margin-top: 20px;
+}
+
+
+.grid2style {
+  margin-top: 200px;
+  margin-left: span(3  of 12);
+  margin-right: span(3 of 12 last);
+}
+
+.sign {
+  margin-top: 10px;
+  @include span(3 of 3);
+}
+
+.signStyle {
+  @include span(3 of 6);
+  margin-left: span(1.5  of 6);
+  margin-right: span(1.5  of 6);  
+}
+
+h2 {
+  text-align: center;
+}
+
+img {
+
+}
+
+
+

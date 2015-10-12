@@ -1,22 +1,25 @@
 angular.module("plastiq", [
+	"plastiq.templates",
 	"plastiq.directives",
 	"plastiq.services",
+	"plastiq.bills",
 	"plastiq.payees",
 	"plastiq.auth",
 	"ui.router"
 ])
+/* @ngInject */
 .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 	$urlRouterProvider.otherwise("/signin");
 
 	$stateProvider
 		.state("signin", {
 			url: "/signin",
-			templateUrl: "/app/auth/signin.html",
+			templateUrl: "app/auth/signin.html",
 			controller: "AuthController"
 		})
 		.state("signup", {
 			url: "/signup",
-			templateUrl: "/app/auth/signup.html",
+			templateUrl: "app/auth/signup.html",
 			controller: "AuthController"
 		})
 		.state("payees", {
@@ -24,10 +27,17 @@ angular.module("plastiq", [
 			templateUrl: "app/payees/payees.html",
 			controller: "PayeesController",
 			authenticate: true
+		})
+		.state("bills", {
+			url: "/bills/{payee}",
+			templateUrl: "app/bills/bills.html",
+			controller: "BillsController",
+			authenticate: true
 		});
 
-	$httpProvider.interceptors.push("AttachTokens")
+	$httpProvider.interceptors.push("AttachTokens");
 })
+/* @ngInject */
 .factory("AttachTokens", function ($window) {
 	var attach = {
 		request: function (object) {
@@ -43,6 +53,7 @@ angular.module("plastiq", [
 
 	return attach;
 })
+/* @ngInject */
 .run(function ($rootScope, $state, $location, Auth) {
 	$rootScope.$on("$stateChangeStart", function (event, next, current) {
 		if (next.authenticate && !Auth.isAuth()) {

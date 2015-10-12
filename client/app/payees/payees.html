@@ -1,18 +1,18 @@
 <div class="container">
-	<div class="payeeSearch">
-		<button ng-attr-class= "{{ biz && 'ACTIVE'}}" ng-click="findBiz()">Business</button>
-		<button ng-attr-class= "{{ person && 'ACTIVE'}}" ng-click="findPerson()">Person</button>
-		<form>
-			<input ng-show="biz"type="text" ng-model="chosenPlace" g-place placeholder="{{ pholder }}" ng-focus="handleFocus()"/>
-			<input ng-show="person" type="text" ng-model="chosenPlace" ng-enter placeholder="{{ pholder }}" ng-focus="handleFocus()" />
-			<div class="wrap" ng-click="fireMySubmit('click')">
-				<button id="customSubmit" type="button" ></button>
+	<div class="payeeSearch grid12">
+		<div class="grid2">
+			<button class="mainButton" ng-click="findBiz()">Business</button>
+			<button class="mainButton" ng-click="findPerson()">Person</button>
+		</div>
+		<form class="grid10">
+			<input class="grid9of10 blah" ng-show="biz"type="text" ng-model="chosenPlace" g-place placeholder="{{ pholder }}" ng-focus="handleFocus()"/>
+			<input class="grid9of10 blah" ng-show="person" type="text" ng-model="chosenPlace" ng-enter placeholder="{{ pholder }}" ng-focus="handleFocus()" />
+			<div class="wrap grid1of10" ng-click="fireMySubmit('click')">
+				<button class="grid1of1 customSubmit" type="button" ></button>
 			</div>
 		</form>
+
 	</div>
-	<div class="payeeList">
-		<ul>
-			<li c-payee ng-repeat="item in payees" content="item"></li>
-		</ul>
+	<div class="grid10 payeeList" c-payee ng-repeat="item in payees" content="item">
 	</div>
 </div>

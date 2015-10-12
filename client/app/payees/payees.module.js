@@ -1,5 +1,5 @@
 angular.module("plastiq.payees", [])
-
+/* @ngInject */
 .controller("PayeesController", function($scope, PayeeService) {
 
 	$scope.biz = true;
@@ -9,6 +9,7 @@ angular.module("plastiq.payees", [])
 
 	$scope.payees = PayeeService.getPayees()
 		.then(function (data) {
+			console.log(data);
 			$scope.payees = data;
 		});
 
@@ -27,9 +28,9 @@ angular.module("plastiq.payees", [])
 
 	$scope.handleFocus = function() {
 		if ($scope.biz === true) {
-			$scope.pholder = "Enter the name of the business..."
+			$scope.pholder = "Enter the name of the business...";
 		} else if ($scope.person === true) {
-			$scope.pholder = "Enter the name of the person..."
+			$scope.pholder = "Enter the name of the person...";
 		}
 	};
 
@@ -51,11 +52,12 @@ angular.module("plastiq.payees", [])
 		//TODO: Should be refactored to use a service in order to communicate with database
 
 		if ($scope.person === true && $scope.chosenPlace !== "") {
-			$scope.payees.push({
-				name: $scope.chosenPlace,
-				address: "Address not provided.",
-				payeeType: "person"
-			});
+
+			// $scope.payees.push({
+			// 	name: $scope.chosenPlace,
+			// 	address: "Address not provided.",
+			// 	payeeType: "person"
+			// });
 
 			PayeeService.savePayee({
 				name: $scope.chosenPlace,
@@ -64,6 +66,7 @@ angular.module("plastiq.payees", [])
 			})
 				.then(function (data) {
 					console.log(data, " SAVED ON SERVER!!");
+					$scope.payees.push(data);
 				})
 				.catch(function (error) {
 					console.error(error);

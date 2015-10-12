@@ -1,5 +1,5 @@
 angular.module("plastiq.auth", [])
-
+/* @ngInject */
 .controller("AuthController", function ($scope, $window, $state, Auth) {
 
 	$scope.user = {};

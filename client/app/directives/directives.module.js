@@ -1,6 +1,6 @@
 angular.module("plastiq.directives", [])
-
-	.directive("cPayee", function($compile) {
+/* @ngInject */
+	.directive("cPayee", function($compile, $state) {
 		var customTemplate = function(payee) {
 			// Creates a template depending on the payee type
 			var image;
@@ -15,13 +15,13 @@ angular.module("plastiq.directives", [])
 				image = "Business_Img.png";
 
 				if (payee.placeId) {
-					payButton = "<div class='whycss'><span class='tooltip' title='Make a payment.'><button class='payButton'></button></span><div>";
+					payButton = "<div class='grid2of10'><span class='tooltip' title='Make a payment.'><button class='payButton'></button></span><div>";
 				} else {
 					payButton = "";
 				}
 			}
 
-			template = "<img src='assets/" + image + "' /><div class='payeeInfo'><p class='payeeName'>{{ content.name }}</p><p class='payeeAddress'>{{content.address}}</p></div>" + payButton;
+			template = "<div class='grid2of10'><img src='assets/" + image + "' /></div><div class='grid6of10'><p class='payeeName'>{{ content.name }}</p><p class='payeeAddress'>{{content.address}}</p></div>" + payButton;
 
 			return template;
 		};
@@ -33,7 +33,8 @@ angular.module("plastiq.directives", [])
 			},
 			link: function($scope, element, attrs) {
 				element.bind("click", function() {
-					alert("Pay your Bills!");
+					console.log($scope.content);
+					$state.go("bills", { payee: $scope.content._id });
 				});
 				
 				element.html(customTemplate($scope.content));
@@ -42,6 +43,7 @@ angular.module("plastiq.directives", [])
 			}
 		};
 	})
+/* @ngInject */
 	.directive("gPlace", function() {
 		//Binds the auto complete to the input form
 		return {
@@ -60,6 +62,8 @@ angular.module("plastiq.directives", [])
 					//Grabs the value when the user chooses a business from autocomplete
 					var verify = gvalue.getPlace();
 
+					console.log(verify);
+
 					var legit = {
 						name: verify.name,
 						address: verify.formatted_address,
@@ -75,6 +79,7 @@ angular.module("plastiq.directives", [])
 			}
 		};
 	})
+/* @ngInject */
 	.directive('ngEnter', function () {
 		//Hacky work around to get the enter key to behave properly (potentially should be refactored)
 	    return function ($scope, element, attrs) {

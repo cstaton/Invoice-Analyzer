@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="payeeInfo">
+		<h2>Payee Info should go here.</h2>
+		<button ng-click="testIt()">Test</button>
+	</div>
+	<div class="grid12 billAdd">
+		<form name="enterBills" class="enterBills" novalidate>
+			<div class="grid3">
+				<label>Invoice Number:</label>
+				<input class="billInput" type="text" ng-model="bill.invoiceNum" name="invoiceNum">
+			</div>
+			<div class="grid3">
+				<label>Due Date:</label>
+				<input class="billInput" type="date" ng-model="bill.dateDue" name="dateDue" required >
+				<p ng-show="enterBills.dateDue.$error.required && enterBills.dateDue.$dirty">
+					Please enter the date the bill is due!
+				</p>
+			</div>
+			<div class="grid3">
+				<label>Total Amount:</label>
+				<input class="billInput" type="number" ng-model="bill.amount" name="amount" required >
+				<p ng-show="enterBills.amount.$error.required && enterBills.amount.$dirty" >
+					Please Enter the amount of the bill!
+				</p>
+			</div>
+			<button class="grid3" type="submit" ng-click="payBill(bill)" ng-disabled="enterBills.$invalid">Submit Bill!</button>
+		</form>
+	</div>
+	<div class="grid10 billDisplay" ng-repeat="item in bills">
+		<div class="grid3">
+			<p> Invoice Number: {{ item.invoiceNum }} </p>
+		</div>
+		<div class="grid3">				
+			<p>Due Date: {{ item.dateDue }}</p>
+		</div>
+		<div class='grid3'>
+			<p>Amount: {{ item.amount }} </p>
+		</div>
+		<div class="grid1">
+			<button class="payButton"></button>
+		</div>
+	</div>
+</div>
