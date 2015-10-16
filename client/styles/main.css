@@ -371,7 +371,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: #E50050;
+  color: blue;
   text-decoration: none; }
   a:hover,
   a:active,
@@ -527,6 +527,12 @@ p {
 
 h2 {
   text-align: center; }
+
+.goodInput {
+  background-color: green; }
+
+.badInput {
+  background-color: red; }
 
 .billAdd {
   height: 70px;

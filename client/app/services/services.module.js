@@ -107,6 +107,35 @@ angular.module("plastiq.services", [])
 		saveBill: saveBill,
 		getBills: getBills
 	};
+})
+
+.factory("PaymentService", function ($http) {
+
+	var savePayment = function(payment) {
+		return $http({
+			method: "POST",
+			url: "/api/protect/payment",
+			data: payment
+		})
+		.then(function (resp) {
+			return resp.data;
+		})
+	};
+
+	var getPayment = function() {
+		return $http({
+			method: "GET",
+			url: "/api/protect/payment"
+		})
+		.then(function (resp) {
+			return resp.data
+		});
+	};
+
+	return {
+		savePayment: savePayment,
+		getPayment: getPayment
+	};
 });
 
 

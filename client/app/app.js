@@ -2,6 +2,7 @@ angular.module("plastiq", [
 	"plastiq.templates",
 	"plastiq.directives",
 	"plastiq.services",
+	"plastiq.payments",
 	"plastiq.bills",
 	"plastiq.payees",
 	"plastiq.auth",
@@ -32,6 +33,12 @@ angular.module("plastiq", [
 			url: "/bills/{payee}",
 			templateUrl: "app/bills/bills.html",
 			controller: "BillsController",
+			authenticate: true
+		})
+		.state("payments", {
+			url: "/payments",
+			templateUrl: "/app/payments/payments.html",
+			controller: "PaymentsController",
 			authenticate: true
 		});
 

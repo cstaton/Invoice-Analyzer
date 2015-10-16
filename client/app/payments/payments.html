@@ -1,0 +1,33 @@
+<div class="container">
+	<h1>Payments</h1>
+	<form name="paymentForm">
+		<div>
+			<input required type="text" name="vendorName" placeholder="Vendor Name" ng-model="payment.vendorName" >
+			<p ng-show="paymentForm.vendorName.$error.required && paymentForm.vendorName.$dirty">Please enter the vendor name</p>
+		</div>
+		<div>
+			<input ng-class="{ goodInput: paymentForm.invoiceNum.$dirty, badInput: paymentForm.invoiceNum.$dirty && paymentForm.invoiceNum.$error.required }" required type="text" name="invoiceNum" placeholder="Invoice Number" ng-model="payment.invoiceNum" >
+			<p ng-show="paymentForm.invoiceNum.$error.required && paymentForm.invoiceNum.$dirty"> Please enter the invoice number</p>
+		</div>
+		<div>
+			<input required type="date" name="paymentDate" placeholder="Date Paid" ng-model="payment.paymentDate" >
+			<p ng-show="paymentForm.$error.required && paymentDate.$dirty">Plase enter the pay date</p>
+		</div>
+		<button ng-click="handlePayment(payment)" ng-disabled="paymentForm.$invalid" >Make payment</button>
+	</form>
+	<div>
+		<p ng-repeat="item in payments"> {{ item.vendorName }}, {{ item.payDate }} </p>
+	</div>
+
+	<input ng-model="carData.make" type="text">
+
+
+	<div blah-tooltip mydata="carData">
+
+	</div>
+</div>
+
+
+
+
+

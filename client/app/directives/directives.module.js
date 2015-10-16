@@ -1,5 +1,17 @@
 angular.module("plastiq.directives", [])
 /* @ngInject */
+	.directive("blahTooltip", function() {
+		var privFun = function() {
+
+		};
+
+		return {
+			scope: { mydata: "="},
+			template: '<h1>This is a tooltip Directive</h1>\
+						<p> {{ mydata.make}} </p>\
+						<input type="text" ng-model="mydata.make">'
+		};
+	})
 	.directive("cPayee", function($compile, $state) {
 		var customTemplate = function(payee) {
 			// Creates a template depending on the payee type

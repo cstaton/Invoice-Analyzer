@@ -1,4 +1,9 @@
 angular.module("plastiq.bills", [])
+.filter("currency", function() {
+	return function(data) {
+		return "$" + data + ".00";
+	};
+})
 /* @ngInject */
 .controller("BillsController", function($scope, $stateParams, BillService, PayeeService) {
 
